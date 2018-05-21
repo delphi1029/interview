@@ -1,5 +1,7 @@
 package dl.datastructures.sorting;
 
+import java.util.Collections;
+
 public class TestMain {
 
 	public static void main(String[] args) {
@@ -9,7 +11,6 @@ public class TestMain {
 		sort.print(a); 
 		 a = sort.sort(a);
 		sort.print(a);
-		
 	}
 
 }
