@@ -97,6 +97,9 @@ public class TestSLLOperations {
 		SLLNode node8 = new SLLNode(0);
 		head = sllOprations.addNodeAtPosition(node1, node8,5);
 		sllOprations.printList(node1);
+		
+		System.out.println(sllOprations.getNode(head, 6));
+		
 	}
 	
 	public SLLNode testGetNode() {
