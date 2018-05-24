@@ -100,6 +100,8 @@ public class TestSLLOperations {
 		
 		System.out.println(sllOprations.getNode(head, 6));
 		
+		System.out.println(sllOprations.nthNodeFromTheEnd(head, 4));
+		
 	}
 	
 	public SLLNode testGetNode() {

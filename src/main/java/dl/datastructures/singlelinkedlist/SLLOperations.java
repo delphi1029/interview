@@ -63,5 +63,21 @@ public class SLLOperations {
 		}
 		return size;
 	}
+	
+	public SLLNode nthNodeFromTheEnd(SLLNode head,int position) {
+		SLLNode p1 = head;
+		SLLNode p2 = head;
+		int i=0;
+		
+		
+		while(p1 != null) {
+			p1 = p1.next;
+			i++;
+			if(i>position) {
+				p2 = p2.next;
+			}
+		}
+		return p2;
+	}
 
 }
