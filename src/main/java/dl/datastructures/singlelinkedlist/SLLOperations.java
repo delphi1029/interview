@@ -1,5 +1,7 @@
 package dl.datastructures.singlelinkedlist;
 
+import org.junit.Assert;
+
 public class SLLOperations {
 	
 	public SLLNode addNode(SLLNode head, SLLNode nodeToAdd) {
@@ -78,6 +80,86 @@ public class SLLOperations {
 			}
 		}
 		return p2;
+	}
+	
+	/*
+	 * 1  2 > 3 > null
+	 * 
+	 * 
+	 */
+	
+	public SLLNode reverse(SLLNode head) {
+		SLLNode node = head;
+		SLLNode next = null;
+		SLLNode prev = null;
+		
+		while(node != null) {
+			next = node.next;
+			node.next = prev;
+			prev = node;
+			node = next;
+		}
+		
+		return prev;
+	}
+	
+	
+	
+	public SLLNode cloneList(SLLNode  head) {
+		
+		SLLNode node = head;
+		SLLNode startNew = null;
+		SLLNode prev = null;
+		
+		while(node!= null) {
+			SLLNode temp = new SLLNode(node.data);
+			if(startNew == null) {
+				startNew = temp;
+				prev = temp;
+			} else {
+				prev.next = temp;
+				prev = temp;
+			}
+			node = node.next;
+		}
+		
+		return startNew;
+		
+	}
+	
+	/*
+	 *  1 -> 2 -> 3
+	 *  null <- 1 2-> 3
+	 *  
+	 *  
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
+	public static void main(String[] args) {
+		SLLOperations sllOprations = new SLLOperations();
+		SLLNode node1 = new SLLNode(4);
+		SLLNode node2 = new SLLNode(41);
+		SLLNode node3 = new SLLNode(412);
+		SLLNode node4 = new SLLNode(423);
+		SLLNode node5 = new SLLNode(434);
+		SLLNode node6 = new SLLNode(445);
+		
+		SLLNode head = sllOprations.addNode(null, node1);
+	
+		
+		head = sllOprations.addNode(head, node2);
+		head = sllOprations.addNode(head, node3);
+		head = sllOprations.addNode(head, node4);
+		head = sllOprations.addNode(head, node5);
+		head = sllOprations.addNode(head, node6);
+		
+		sllOprations.printList(head);
+		
+		SLLNode abc = sllOprations.reverse(head);
+		sllOprations.printList(abc);
 	}
 
 }
