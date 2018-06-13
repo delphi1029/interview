@@ -40,8 +40,13 @@ public class Tree {
 		}
 		return 0;
 	}
-
 	
+	public void delete(int value) {
+		root = delete(root,value);
+	}
+	
+	
+
 	public static void main(String[] args) {
 		Tree t = new Tree();
 		

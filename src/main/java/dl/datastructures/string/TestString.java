@@ -6,7 +6,10 @@ public class TestString {
 		String str = "ztzzzzbbbccccddehhhhiiis";
 		FirstNonRepeatedCharacter obj = new FirstNonRepeatedCharacter();
 		System.out.println(obj.findFirstNonRepeatedCharacter(str));
+		
 
 	}
 
+	
+	
 }
