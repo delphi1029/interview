@@ -83,27 +83,27 @@ public class SLLOperations {
 	}
 	
 	/*
-	 * 1  2 > 3 > null
+	 *  1  2 > 3 > null
 	 * 
 	 * 
 	 */
 	
 	public SLLNode reverse(SLLNode head) {
-		SLLNode node = head;
+		SLLNode temp = head;
 		SLLNode next = null;
 		SLLNode prev = null;
 		
-		while(node != null) {
-			next = node.next;
-			node.next = prev;
-			prev = node;
-			node = next;
+		while(temp != null) {
+			next = temp.next;
+			temp.next = prev;
+			prev = temp;
+			temp = next;
 		}
-		
 		return prev;
+		
 	}
 	
-	
+
 	
 	public SLLNode cloneList(SLLNode  head) {
 		

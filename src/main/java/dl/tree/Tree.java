@@ -42,7 +42,7 @@ public class Tree {
 	}
 	
 	public void delete(int value) {
-		root = delete(root,value);
+		//root = delete(root,value);
 	}
 	
 	
