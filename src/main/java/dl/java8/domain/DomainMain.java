@@ -3,6 +3,7 @@ package dl.java8.domain;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class DomainMain {
@@ -25,6 +26,15 @@ public class DomainMain {
 		//grouping transactions by currency
 		Map<String,List<Transaction>> transactionsByCurrency = list.stream().collect(Collectors.groupingBy(Transaction::getCurrency));
 		System.out.println(transactionsByCurrency);
+		
+		//finding max transaction by value
+		Comparator<Transaction> comp = Comparator.comparingInt(Transaction::getValue);
+		Optional<Transaction> trans = list.stream().collect(Collectors.maxBy(comp));
+		System.out.println(trans);
+		
+		//Add values of all the transaction
+		int sum = list.parallelStream().mapToInt(Transaction::getValue).reduce(0,Integer :: sum);
+		System.out.println(sum);
 		
 	}
 
